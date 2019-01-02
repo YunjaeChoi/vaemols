@@ -83,7 +83,7 @@ This notebook helps to get variational structures when given a SMILES string.
 2. `visualize_latent_space.ipynb <https://github.com/YunjaeChoi/vaemols/blob/master/visualize_latent_space.ipynb>`_
 -------------------------------------------------------------------------------------------------------------------
 
-This notebook helps to get visualize learned latent space using a plot or tensorboard.
+This notebook helps visualizing learned latent space using a plot or tensorboard.
 
 tensorboard visualization example:
 
