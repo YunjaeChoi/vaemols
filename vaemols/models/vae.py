@@ -20,10 +20,6 @@ class EncoderConv1D(tf.keras.Model):
         self.norm3 = tf.keras.layers.BatchNormalization()
         self.act3 = tf.keras.layers.Activation('relu')
 
-        #self.conv4 = tf.keras.layers.Conv1D(filters=128, kernel_size=3, strides=2)
-        #self.norm4 = tf.keras.layers.BatchNormalization()
-        #self.act4 = tf.keras.layers.Activation('relu')
-
         self.dense1 = tf.keras.layers.Dense(512)
         self.dense_norm1 = tf.keras.layers.BatchNormalization()
         self.dense_act1 = tf.keras.layers.Activation('relu')
@@ -44,10 +40,6 @@ class EncoderConv1D(tf.keras.Model):
             x = self.conv3(x)
             x = self.norm3(x)
             x = self.act3(x)
-
-            #x = self.conv4(x)
-            #x = self.norm4(x)
-            #x = self.act4(x)
             x = tf.keras.layers.Flatten()(x)
 
             z_mean = self.z_mean_dense(x)
@@ -133,7 +125,3 @@ class VariationalAutoencoder(tf.keras.Model):
         y_pred_class = tf.argmax(y_pred, axis=-1)
         acc = tf.reduce_mean(tf.cast(tf.equal(y_true_rep, y_pred_class), tf.float32))
         return acc
-
-
-    def train(self, model_path='saved_model'):
-        pass
